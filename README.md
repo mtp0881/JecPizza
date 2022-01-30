@@ -14,6 +14,7 @@ Webサイトの設計
 	ASP.NET Webアプリケーション 
 	.Net Framework 4.1
 	MVCデザインパターン
+	Microsoft クラウドサービス
 ##### 作業工程
 	要件定義
 	実装
