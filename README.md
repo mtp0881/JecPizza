@@ -12,7 +12,7 @@ Webサイトの設計
 	Windows OS
 	C# 言語
 	ASP.NET Webアプリケーション 
-	.Net Framework 4.1
+	.Net Framework 4.8
 	MVCデザインパターン
 	Microsoft クラウドサービス
 ##### 作業工程
