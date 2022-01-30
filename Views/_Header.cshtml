@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-style-type" content="text/css" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <title>JecPizza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.js" integrity="sha512-XHnWZWvy5TkCnPgLU7XsWhGAks1JQ3uFutVxRSH0Z4+djsGkCkxVsYu+JgfrDicvbCmjfUf1HeMWYUvUYKgjzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @RenderSection("Styles", required: false)
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../Content/Css/Style.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/Home/Index" class="logo">JecPizza</a>
+
+        @using (Html.BeginForm("Menu", "Menu", FormMethod.Post, new { @class = "header__form" }))
+        {
+            <input type="text" name="str" required placeholder="入力してください">
+        }
+        <nav class="navbar">
+            <a href="/Home/Index">ホーム</a>
+            <a href="/Home/Index#speciality">限定商品</a>
+            <a href="/Menu/Menu">メニュー</a>
+            <a href="/Home/Index#contact">問い合わせ</a>
+        </nav>
+        <div class="acc">
+            <a href="/Cart/Cart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="/Account/Account"><i class="fas fa-user"></i></a>
+            @if (ViewBag.Name1 != "logined")
+            {
+                <a href="/Account/Login"><i class="fas fa-sign-in-alt"></i></a>
+            }
+            @if (ViewBag.Name1 == "logined")
+            {
+                <a href="/Account/Login"><i class="fas fa-sign-out-alt" style="color:gray"></i></a>
+            }
+        </div>
+    </header>
+
+    <div class="wrapper__body">
+        @RenderBody()
+    </div>
+
+    <footer>
+            <p>© Copyright 2022 byJecPizza。</p>
+            <ul>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Skype</a></li>
+                <li><a href="#">Behance</a></li>
+                <li><a href="#">Linked-in</a></li>
+            </ul>
+    </footer>
+</body>
+</html>

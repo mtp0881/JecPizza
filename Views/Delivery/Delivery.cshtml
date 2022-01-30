@@ -1,0 +1,39 @@
+﻿@section Styles
+{
+    <link href="~/Content/Css/DeliveryStyle.css" rel="stylesheet" />
+    <link href="~/Content/Css/menu.css" rel="stylesheet" />
+
+
+}
+@{
+    ViewBag.Title = "Delivery";
+    Layout = "~/Views/_Header.cshtml";
+}
+<div class="background-wrapper">
+    <div class="wraper">
+        <h1 class="delivery_title">デリバリー</h1>
+        <h2 class="delivery_title2">アドレス</h2>
+
+        @using (Html.BeginForm("Buy", "Delivery", FormMethod.Post, new { @class = "delivery_form" }))
+        {
+            <input type="radio" id="02-D" name="radio02" checked="checked">
+            <label for="02-D" class="radio02">登録済みの住所を使う</label>
+            <input type="radio" id="02-E" name="radio02">
+            <label for="02-E" class="radio02">新しい住所を使う</label>
+            <div class="addtext">
+                <i class="fas fa-house-user"></i>
+                <input type="text" name="address" id="textbox" placeholder="Address">
+            </div>
+            <div class="center">
+                <h2 class="delivery_title2">日時</h2>
+                <div class="date">
+                    <input type="datetime-local" step="600" required name="date">
+                </div>
+            </div>
+            <div class="buttons">
+                <button onclick="location.href='@Url.Action("Cart","Cart")'" class="btn2">戻る</button>
+                <button class="btn2" type="submit">確定</button>
+            </div>
+        }
+    </div>
+</div>

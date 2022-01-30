@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Db-Web.config Connection String" description="Db Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:pizzashop.database.windows.net,1433;Initial Catalog=PizzaShopping;Persist Security Info=False;User ID=maitrongphu;Password=Phu005410;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\maitrongphu\\Desktop\\JecPizza\\JecPizza\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Db']/@connectionString" />
+  </parameter>
+</parameters>

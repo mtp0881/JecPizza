@@ -1,0 +1,267 @@
+
+
+.wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: url(../images/bgs/acc_page_bg.jpg) 100% 100% no-repeat fixed;
+    background-size: cover;
+}
+
+.form {
+    width: 500px;
+    margin: 150px auto 40px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    }
+
+.register-wrapper input {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 150px;
+    text-align: center;
+    color: #ffffff;
+    background-color: orange;
+    border-bottom: solid 5px #d7b77c;
+}
+
+
+.form_title{
+    color: white;
+    background-color: #3cb371;
+    padding: 10px 30px;
+}
+
+.form_content{
+    margin: 25px 50px;
+}
+
+.form_list{
+    margin-bottom: 2em;
+}
+
+.ch{
+    display:table-row;
+}
+
+.ch input[type="checkbox"]{
+    width:50px;
+}
+
+.ch label{
+    display: table-cell;
+}
+
+
+html {
+    /*background: url("../../Content/Images/bgs/v642-nap-26-fastfood.jpg");
+    background-size:cover;*/
+    padding-top: 90px;
+}
+
+
+
+/*form{
+    padding-bottom:50px;
+}*/
+
+
+td {
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.register-wrapper {
+    margin-top: 40px;
+}
+
+.register-table {
+    margin: 30px auto 50px;
+    box-shadow: 0 0 8px grey;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.login-table {
+    margin: 0px auto 0px;
+    padding: 20px;
+}
+
+.register-title-h1 {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px;
+}
+
+.register-title-h2 {
+    font-size: 24px;
+}
+
+.register-title-input {
+    width: 350px;
+}
+
+.register-table .register-button input {
+    margin: 0 auto;
+}
+
+.login-table .register-button input {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+
+#myform {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.register-table input {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+    .register-table input[type="submit"] {
+        display: block;
+        width: 150px;
+        text-align: center;
+        color: #ffffff;
+        background-color: orange;
+        border-bottom: solid 5px #d7b77c;
+        margin: 0 auto;
+    }
+
+        .register-table input[type="submit"]:hover {
+            background-color: #d7b77c;
+        }
+
+    .register-table input[type="button"] {
+        display: block;
+        width: 150px;
+        text-align: center;
+        color: #ffffff;
+        background-color: orange;
+        border-bottom: solid 5px #d7b77c;
+        margin: 0 auto;
+    }
+
+        .register-table input[type="button"]:hover {
+            background-color: #b77a0b;
+        }
+
+.login-table input {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+    .login-table input[type="submit"] {
+        display: block;
+        width: 150px;
+        text-align: center;
+        color: #ffffff;
+        background-color: orange;
+        border-bottom: solid 5px #b17508;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+        .login-table input[type="submit"]:hover {
+            background-color: #b77a0b;
+        }
+
+.register-title-input label {
+    position: relative;
+}
+
+    .register-title-input label input {
+        position: relative;
+        top: -18px;
+        left: -126px;
+    }
+
+.register-table select {
+    margin-top: 20px;
+    display: block;
+    width: 50%;
+    font-size: 20px;
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.register-table2 {
+    box-shadow: 0 0 8px grey;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.login {
+    width: 900px;
+    margin: 50px auto 0;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px grey;
+    background-color:white;
+}
+
+.login table{
+    width:100%;
+}
+
+.register {
+    margin-top: 30px;
+}
+
+.register-button input{
+    margin:0 auto;
+}
+
+.register-title-input input[type=radio] {
+    display:inline-block;
+    width:30px;
+}

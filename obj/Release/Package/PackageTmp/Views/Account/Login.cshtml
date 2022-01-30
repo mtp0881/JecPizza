@@ -1,0 +1,68 @@
+﻿@model JecPizza.Models.LoginModel
+
+
+@{
+    Layout = "~/Views/_Header.cshtml";
+}
+
+@section Styles
+{
+    <link href="~/Content/Css/register.css" rel="stylesheet" />
+    <link href="~/Content/Css/register2.css" rel="stylesheet" />
+
+}
+<div class="login-wrapper">
+
+    @using (Html.BeginForm())
+    {
+        <div class="login">
+            <table class="login-table">
+                <tr>
+                    <th colspan="2" class="register-title-h1">ログインID(メールアドレス)とパスワードを入力してください</th>
+                </tr>
+                <tr>
+                    <td class="register-title-h2">ログインID(メールアドレス)</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.id)</td>
+                </tr>
+                <tr>
+                    <td class="register-title-h2">パスワード</td>
+                    <td class="register-title-input">@Html.PasswordFor(model => Model.passWord)</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="register-button"><input type="submit" name="form" value="ログイン" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.DisplayFor(model => Model.message)</td>
+                </tr>
+                <tr>
+                    <td>Demo Id : 20jn0103@jec.ac.jp</td>
+                </tr>
+                <tr>
+                    <td>Demo Password : 20jn0103</td>
+                </tr>
+            </table>
+        </div>  
+    }
+
+    @using (Html.BeginForm("RedirectEntry", "Account"))
+    {
+        <div class="register">
+            <table class="login-table">
+                <tr>
+                    <th class="register-title-h1">初めてご利用の方</th>
+                </tr>
+                <tr>
+                    <td class="register-title-h2">JecPizzaにログインするには会員登録が必要です</td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="register-button">
+                        <input type="submit" name="input" value="新規会員登録" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>

@@ -1,0 +1,152 @@
+﻿
+@model JecPizza.Models.GoodsModel
+
+@{
+    Layout = "~/Views/_Header.cshtml";
+    <link href="~/Content/Css/menu.css" rel="stylesheet" />
+}
+<section class="wraper2">
+    @if (Model.SearchGoodsDataTable == null)
+    {
+        <h2>ピザ</h2>
+
+        <div class="list">
+            @foreach (DataRow goods in Model.GoodsDataTable.Rows)
+            {
+                if (goods["GroupId"].ToString().Equals("A"))
+                {
+                    <div class="item">
+                        <img src="~/Content/Images/Pizza/@goods["GoodsImage"]" alt="">
+                        <h3>@goods["GoodsName"]</h3>
+                        <p>@goods["Detail"]</p>
+                        <p>
+                            @{
+                                string price = '¥' + ((int)goods["Price"]).ToString();
+                                @price
+                            }
+                        </p>
+                        @using (Html.BeginForm("Cart", "Cart"))
+                        {
+                            @Html.Hidden("goodsCode", goods["GoodsId"])
+                            <button class="content-button">カートに追加</button>
+                        }
+                    </div>
+                }
+            }
+        </div>
+
+        <h2>パスタ</h2>
+
+        <div class="list">
+            @foreach (DataRow goods in Model.GoodsDataTable.Rows)
+            {
+                if (goods["GroupId"].ToString().Equals("B"))
+                {
+                    <div class="item">
+                        <img src="~/Content/Images/Pizza/@goods["GoodsImage"]" alt="">
+                        <h3>@goods["GoodsName"]</h3>
+                        <p>@goods["Detail"]</p>
+                        <p>
+                            @{
+                                string price = '¥' + ((int)goods["Price"]).ToString();
+                                @price
+                            }
+                        </p>
+                        @using (Html.BeginForm("Cart", "Cart"))
+                        {
+                            @Html.Hidden("goodsCode", goods["GoodsId"])
+                            <button class="content-button">カートに追加</button>
+                        }
+                    </div>
+                }
+            }
+        </div>
+
+        <h2>デザート</h2>
+
+        <div class="list">
+            @foreach (DataRow goods in Model.GoodsDataTable.Rows)
+            {
+                if (goods["GroupId"].ToString().Equals("C"))
+                {
+                    <div class="item">
+                        <img src="~/Content/Images/Pizza/@goods["GoodsImage"]" alt="">
+                        <h3>@goods["GoodsName"]</h3>
+                        <p>@goods["Detail"]</p>
+                        <p>
+                            @{
+                                string price = '¥' + ((int)goods["Price"]).ToString();
+                                @price
+                            }
+                        </p>
+                        @using (Html.BeginForm("Cart", "Cart"))
+                        {
+                            @Html.Hidden("goodsCode", goods["GoodsId"])
+                            <button class="content-button">カートに追加</button>
+                        }
+                    </div>
+                }
+            }
+        </div>
+
+        <h2>ドリンク</h2>
+
+        <div class="list">
+            @foreach (DataRow goods in Model.GoodsDataTable.Rows)
+            {
+                if (goods["GroupId"].ToString().Equals("D"))
+                {
+                    <div class="item drink">
+                        <img src="~/Content/Images/Pizza/@goods["GoodsImage"]" alt="">
+                        <h3>@goods["GoodsName"]</h3>
+                        <p>@goods["Detail"]</p>
+                        <p>
+                            @{
+                                string price = '¥' + ((int)goods["Price"]).ToString();
+                                @price
+                            }
+                        </p>
+                        @using (Html.BeginForm("Cart", "Cart"))
+                        {
+                            @Html.Hidden("goodsCode", goods["GoodsId"])
+                            <button class="content-button">カートに追加</button>
+                        }
+                    </div>
+                }
+            }
+        </div>
+    }
+    else if (Model.SearchGoodsDataTable.Rows.Count >= 1)
+    {
+        <h2>「@ViewBag.data1」の検索結果：</h2>
+
+        <div class="list">
+            @foreach (DataRow goods in Model.SearchGoodsDataTable.Rows)
+            {
+                <div class="item">
+                    <img src="~/Content/Images/Pizza/@goods["GoodsImage"]" alt="">
+                    <h3>@goods["GoodsName"]</h3>
+                    <p>@goods["Detail"]</p>
+                    <p>
+                        @{
+                            string price = '¥' + ((int)goods["Price"]).ToString();
+                            @price
+                        }
+                    </p>
+                    @using (Html.BeginForm("Cart", "Cart"))
+                    {
+                        @Html.Hidden("goodsCode", goods["GoodsId"])
+                        <button class="content-button">カートに追加</button>
+                    }
+                </div>
+            }
+        </div>
+    }
+    else
+    { <h2>「@ViewBag.data1」の検索結果に該当する商品が見つかりませんでした。</h2>}
+</section>
+
+<div style="height:70px"></div>
+
+
+

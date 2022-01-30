@@ -1,0 +1,80 @@
+﻿@model JecPizza.Models.MemberRegisterModel
+
+@section Styles
+{
+    <link href="~/Content/Css/register.css" rel="stylesheet" />
+    <link href="~/Content/Css/register2.css" rel="stylesheet" />
+    <link href="~/Content/Css/menu.css" rel="stylesheet" />
+
+}
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/_Header.cshtml";
+}
+<div class="register-wrapper">
+    @using (Html.BeginForm())
+    {
+        <div class="login">
+            <table >
+                <tr>
+                    <th colspan="2" class="register-title-h1">新規会員登録</th>
+                </tr>
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.UserName, "ニックネーム")</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.UserName, new { required = "required" })</td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.Password, "パスワード")</td>
+                    <td class="register-title-input">@Html.PasswordFor(model => Model.Password, new { required = "required" })</td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.MemberName, "氏名")</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.MemberName, new { required = "required" })</td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.Email, "メールアドレス（ログインID）")</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.Email, new { type = "email", required = "required" })</td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.PostCode, "郵便番号")</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.PostCode, new { required = "required" })</td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.Address, "住所")</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.Address, new { required = "required" })</td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.Dob, "生年月日")</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.Dob, new { type = "Date", required = "required" })</td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.Sex, "性別")</td>
+                    <td class="register-title-input">
+                        <label>男</label>  
+                        @Html.RadioButtonFor(model => Model.Sex, "0")
+                        <label>女</label>  
+                        @Html.RadioButtonFor(model => Model.Sex, "true")
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="register-title-h2">@Html.LabelFor(model => Model.Tel, "電話番号", new { required = "required" })</td>
+                    <td class="register-title-input">@Html.TextBoxFor(model => Model.Tel)</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="register-button"><input type="submit" name="name" value="登録" /></td>
+                </tr>
+            </table>
+        </div>
+
+    }
+</div>
+<div style="height:140px"></div>

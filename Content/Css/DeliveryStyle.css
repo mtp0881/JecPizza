@@ -1,0 +1,242 @@
+
+.wraper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:700px;
+    box-shadow:0 0 10px black;
+    margin:0 auto;
+    border-radius:14px;
+    padding:20px;
+    background-color:white;
+}
+
+.delivery_form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.center {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    flex-direction: column;
+}
+
+.buttons {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.radio02 {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 30px;
+    position: relative;
+    width: auto;
+}
+
+    .radio02::before {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 16px;
+        left: 5px;
+        margin-top: -8px;
+        position: absolute;
+        top: 50%;
+        width: 16px;
+    }
+
+    .radio02::after {
+        background: #FF4F02;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 8px;
+        left: 9px;
+        margin-top: -4px;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        width: 8px;
+    }
+
+input[type=radio]:checked + .radio02::before {
+    border-color: #666;
+}
+
+input[type=radio]:checked + .radio02::after {
+    opacity: 1;
+}
+
+.radiof {
+    display: flex;
+}
+
+.addtext {
+    position: relative;
+    width: 100%;
+    margin: 5px;
+    display: none;
+}
+
+    .addtext.active {
+        display: block;
+    }
+
+    .addtext input[type='text'] {
+        font-size: 22px;
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: 60px;
+        letter-spacing: 1px;
+        border: 0;
+        background-color: transparent;
+        margin-top: 16px;
+    }
+
+        .addtext input[type='text']:focus {
+            outline: none;
+        }
+
+            .addtext input[type='text']:focus::after {
+                outline: none;
+            }
+
+    .addtext i {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        padding: 3px 5px;
+        transition: 0.3s;
+        color: #aaaaaa
+    }
+
+    .addtext::after {
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin-top: -1px;
+        content: '';
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: #aaaaaa;
+    }
+
+.background-wrapper {
+    background: url("../../Content/Images/bgs/sugano.jpg") 100% 100% no-repeat fixed;
+    background-size: cover;
+    padding: 191px 0 150px 0;
+}
+
+.delivery_title{
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.delivery_title2{
+    margin:30px;
+    font-size:24px;
+}
+
+button.btn2 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    color: #4a3535;
+    text-transform: uppercase;
+    padding: 3px 50px;
+    background: #f37e53;
+    border: 2px solid #262525;
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+    button.btn2::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #c95f38;
+        border-radius: inherit;
+        -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+        box-shadow: 0 0 0 2px #323232, 0 0.625em 0 0 #dfdcdc;
+        -webkit-transform: translate3d(0, 0.75em, -1em);
+        transform: translate3d(0, 0.75em, -1em);
+        -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+        transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+        transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+        transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    }
+
+    button.btn2:hover {
+        background: #d9714b;
+        -webkit-transform: translate(0, 0.25em);
+        transform: translate(0, 0.25em);
+        color: #4a3535;
+    }
+
+        button.btn2:hover::before {
+            -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+            box-shadow: 0 0 0 2px #323232, 0 0.5em 0 0 #dfdcdc;
+            -webkit-transform: translate3d(0, 0.5em, -1em);
+            transform: translate3d(0, 0.5em, -1em);
+        }
+
+    button.btn2:active {
+        background: #dd5d2e;
+        -webkit-transform: translate(0em, 0.75em);
+        transform: translate(0em, 0.75em);
+    }
+
+        button.btn2:active::before {
+            -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+            box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+            -webkit-transform: translate3d(0, 0, -1em);
+            transform: translate3d(0, 0, -1em);
+        }
+
+h1 {
+    font-size: 50px;
+}
+
+.buttons {
+    margin: 30px 0;
+}
+

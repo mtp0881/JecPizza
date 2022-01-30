@@ -1,0 +1,113 @@
+﻿@using System.Configuration
+@model JecPizza.Models.CartModel
+
+@section Styles
+{
+    <link href="~/Content/Css/Cart.css" rel="stylesheet" />
+}
+
+@{
+    Layout = "~/Views/_Header.cshtml";
+}
+
+@{
+    //int total = 0;
+    ViewBag.total = 0;
+}
+
+<div class="cart-wrapper">
+    <div class="title">
+        <h1>カート</h1>
+    </div>
+    <div class="cart-wrap">
+        <div class="table-wrap">
+            @if (Model.GetMemberCart != null)
+            {
+                foreach (DataRow dr in Model.GetMemberCart.Rows)
+                {
+                    ViewBag.total += int.Parse(@dr["Price"].ToString()) * int.Parse(@dr["num"].ToString());
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="image"><img src="~/Content/Images/Pizza/@dr["GoodsImage"]" alt=""></div>
+                                </td>
+                                <td>@dr["GoodsName"]</td>
+                                <td>
+                                    @{
+                                        string price = '¥' + ((int)dr["Price"]).ToString();
+                                        @price
+                                    }
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("Update", "Cart", FormMethod.Post, new { @class = "kosu-form" }))
+                                    {
+                                        <span>数量</span>
+                                        <span class="kosu-form-input">
+                                            @Html.TextBox("num", dr["Num"], new { reqired = "required" })
+                                            @{
+                                                var items = Enumerable.Repeat(new SelectListItem(), 10);
+                                                foreach (SelectListItem item in items)
+                                                {
+
+                                                }
+
+                                                Html.DropDownList("num", items);
+                                            }
+                                            @Html.Hidden("goodsCode", dr["GoodsId"])
+                                        </span>
+                                        <span><input class="henko_btn" type="submit" name="btnUpdate" value="変更" /></span>
+                                    }
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("Delete", "Cart"))
+                                    {
+                                        @Html.Hidden("goodsCode", dr["GoodsId"])
+                                        <input class="sakujo_btn" type="submit" name="sakujo" value="削除" />
+                                    }
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            }
+
+        </div>
+
+        <div class="table-wrap2">
+            <h3>カード</h3>
+            @foreach (DataRow dr2 in Model.GetMemberCard.Rows)
+            {
+                String cardType = @dr2["Type"].ToString();
+
+                <div class="credit" data-id=@cardType>
+                    <p>@dr2["Type"]</p>
+                    <p class="card-code">@dr2["CardNum"].ToString().Substring(0, 4)    @dr2["CardNum"].ToString().Substring(3, 4)    @dr2["CardNum"].ToString().Substring(7, 4)    @dr2["CardNum"].ToString().Substring(11, 4)</p>
+                    <p>@dr2["Name"]</p>
+                    <p>@DateTime.Parse(dr2["Period"].ToString()).ToString("MM/yy") </p>
+                </div>
+            }
+            <div class="cuppon">
+                <label for="">クーポンコード</label>
+                <input type="text" name="" id="">
+                <button>+</button>
+            </div>
+            @using (Html.BeginForm("Delivery", "Delivery")){
+        <p class="gokei">合計 : ¥@ViewBag.total.ToString()</p>
+                Session["total"] = ViewBag.total;
+                <input class="kaikei" type="submit" value="次へ">
+            }
+           
+        </div>
+    </div>
+    <div class="cart-button-wrap">
+        <div class="back cart-button">
+            <a href="../Home/Index">戻る</a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
